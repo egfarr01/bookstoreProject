@@ -1,5 +1,7 @@
 package com.example.bookstoreProject.entity;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,24 +16,31 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "users")
-public class User {
-
+@Table(name = "books")
+public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String user_name;
-    private String password;
-    private String first_name;
-    private String last_name;
-    private String email;
+    private String name;
+    private String description;
+    private String price;
+    
+    @ManyToOne
+    Author author;
+    private String genre;
+    private int year_published;
+    private Long copies_sold;
+
     @CreationTimestamp
     private LocalDateTime date_created;
     @UpdateTimestamp
