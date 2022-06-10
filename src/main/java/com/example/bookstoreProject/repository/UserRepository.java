@@ -10,10 +10,10 @@ import java.util.List;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
     @Query("SELECT u FROM User u WHERE " +
-            "u.first_name LIKE CONCAT('%', :query, '%')")
+            "u.user_name LIKE CONCAT('%', :query, '%')")
     List<User> searchUsers(String query);
 
     @Query(value = "SELECT * from users p WHERE " +
-    "p.first_name LIKE CONCAT('%', :query, '%')", nativeQuery = true)
+    "p.user_name LIKE CONCAT('%', :query, '%')", nativeQuery = true)
     List<User> searchUsersSQL(String query);
 }
