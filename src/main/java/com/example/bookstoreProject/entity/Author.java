@@ -21,17 +21,15 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "users")
-public class User {
-
+@Table(name = "authors")
+public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String user_name;
-    private String password;
     private String first_name;
     private String last_name;
-    private String email;
+    private String bio;
+    private String publisher;
     @CreationTimestamp
     private LocalDateTime date_created;
     @UpdateTimestamp
