@@ -32,6 +32,7 @@ public class User {
     private String first_name;
     private String last_name;
     private String email;
+
     @CreationTimestamp
     private LocalDateTime date_created;
     @UpdateTimestamp
