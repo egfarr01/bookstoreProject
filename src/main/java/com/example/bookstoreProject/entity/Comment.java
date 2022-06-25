@@ -16,8 +16,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 
@@ -44,4 +42,7 @@ public class Comment {
     private LocalDateTime date_created;
     @UpdateTimestamp
     private LocalDateTime date_updated;
+    public Object searchComments(String query) {
+        return null;
+    }
 }
