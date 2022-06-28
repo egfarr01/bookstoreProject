@@ -22,10 +22,20 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public Book createBook(Book book, Author author) {
-        Book myBook = book;
-        myBook.setAuthor(author);
-        return bookRepository.save(myBook);
+    public List<Book> searchBooksByAuthor(Long authorId) {
+        List<Book> books = bookRepository.searchBooksByAuthor(authorId);
+        return books;
+    }
+
+    @Override
+    public Book searchBooksByISBN(String ISBN) {
+        Book book = bookRepository.searchBooksByISBN(ISBN);
+        return book;
+    }
+
+    @Override
+    public Book createBook(Book book) {
+        return bookRepository.save(book);
     }
 
 }
