@@ -34,4 +34,8 @@ public class Author {
     private LocalDateTime date_created;
     @UpdateTimestamp
     private LocalDateTime date_updated;
+
+    public Author(Long id) {
+        this.id = id;
+    }
 }

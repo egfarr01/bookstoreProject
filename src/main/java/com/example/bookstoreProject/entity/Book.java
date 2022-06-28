@@ -2,11 +2,14 @@ package com.example.bookstoreProject.entity;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
+import java.util.Set;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -19,6 +22,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 
 @Getter
@@ -29,17 +33,18 @@ import javax.persistence.ManyToOne;
 @Table(name = "books")
 public class Book {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
+    private String ISBN;
+    private String title;
     private String description;
     private String price;
     
-    @ManyToOne
-    Author author;
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name="author_id")
+    private Author author;
+
     private String genre;
     private int year_published;
-    private Long copies_sold;
+    private long copies_sold;
 
     @CreationTimestamp
     private LocalDateTime date_created;
