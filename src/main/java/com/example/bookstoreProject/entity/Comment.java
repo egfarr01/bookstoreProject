@@ -43,4 +43,7 @@ public class Comment {
     private LocalDateTime date_created;
     @UpdateTimestamp
     private LocalDateTime date_updated;
+    public Object searchComments(String query) {
+        return null;
+    }
 }
