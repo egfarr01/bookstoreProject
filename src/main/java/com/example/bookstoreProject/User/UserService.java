@@ -1,6 +1,4 @@
-package com.example.bookstoreProject.service;
-
-import com.example.bookstoreProject.entity.User;
+package com.example.bookstoreProject.User;
 
 import java.util.List;
 

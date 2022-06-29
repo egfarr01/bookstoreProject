@@ -1,10 +1,8 @@
-package com.example.bookstoreProject.service;
+package com.example.bookstoreProject.Book;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
-
-import com.example.bookstoreProject.entity.Book;
 
 @Service
 public interface BookService {

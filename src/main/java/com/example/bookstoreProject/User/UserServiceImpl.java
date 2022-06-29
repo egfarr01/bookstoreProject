@@ -1,8 +1,5 @@
-package com.example.bookstoreProject.service.impl;
+package com.example.bookstoreProject.User;
 
-import com.example.bookstoreProject.entity.User;
-import com.example.bookstoreProject.repository.UserRepository;
-import com.example.bookstoreProject.service.UserService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

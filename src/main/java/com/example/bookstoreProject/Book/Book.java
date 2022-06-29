@@ -1,4 +1,4 @@
-package com.example.bookstoreProject.entity;
+package com.example.bookstoreProject.Book;
 
 import java.time.LocalDateTime;
 
@@ -12,9 +12,11 @@ import javax.persistence.Table;
 import java.util.Set;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.NaturalId;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import com.example.bookstoreProject.repository.AuthorRepository;
+import com.example.bookstoreProject.Author.Author;
+import com.example.bookstoreProject.Author.AuthorRepository;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -33,7 +35,7 @@ import javax.persistence.OneToMany;
 @Table(name = "books")
 public class Book {
     @Id
-    private String ISBN;
+    private String isbn;
     private String title;
     private String description;
     private String price;

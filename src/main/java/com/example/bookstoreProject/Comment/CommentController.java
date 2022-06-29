@@ -1,7 +1,4 @@
-package com.example.bookstoreProject.controller;
-import com.example.bookstoreProject.entity.Comment;
-import com.example.bookstoreProject.service.impl.CommentService;
-
+package com.example.bookstoreProject.Comment;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

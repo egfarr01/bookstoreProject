@@ -1,4 +1,4 @@
-package com.example.bookstoreProject.controller;
+package com.example.bookstoreProject.Book;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,9 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import com.example.bookstoreProject.entity.Author;
-import com.example.bookstoreProject.entity.Book;
-import com.example.bookstoreProject.service.BookService;
+import com.example.bookstoreProject.Author.Author;
+
 import java.util.List;
 
 @RestController
@@ -22,7 +21,7 @@ public class BookController {
         this.bookService = bookService;
     }
 
-    @GetMapping("searchByISBN/{ISBN}")
+    @GetMapping("/searchByISBN/{ISBN}")
     public ResponseEntity<Book> searchBooks(@PathVariable String ISBN){
         return ResponseEntity.ok(bookService.searchBooksByISBN(ISBN));
     }
@@ -32,7 +31,7 @@ public class BookController {
         return ResponseEntity.ok(bookService.searchBooksByAuthor(authorId));
     }
     
-    @PostMapping("createBook/{authorId}")
+    @PostMapping("/createBook/{authorId}")
     public Book createBook(@RequestBody Book book, @PathVariable Long authorId) {
         book.setAuthor(new Author(authorId));
         return bookService.createBook(book);

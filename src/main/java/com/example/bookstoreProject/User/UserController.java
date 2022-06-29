@@ -1,6 +1,4 @@
-package com.example.bookstoreProject.controller;
-import com.example.bookstoreProject.entity.User;
-import com.example.bookstoreProject.service.UserService;
+package com.example.bookstoreProject.User;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
