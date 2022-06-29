@@ -1,4 +1,4 @@
-package com.example.bookstoreProject.entity;
+package com.example.bookstoreProject.CreditCard;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +9,8 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+
+import com.example.bookstoreProject.User.User;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,16 +24,17 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "shopping_cart")
-public class ShoppingCart {
+@Table(name = "credit_cards")
+public class CreditCard {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToOne
     User user;
-    @ManyToOne
-    Book book;
+    private int card_number;
+    private int zip_code;
+    private int cvv;
     
     
     @CreationTimestamp

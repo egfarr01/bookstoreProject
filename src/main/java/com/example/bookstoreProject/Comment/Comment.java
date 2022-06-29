@@ -1,4 +1,4 @@
-package com.example.bookstoreProject.entity;
+package com.example.bookstoreProject.Comment;
 
 import java.time.LocalDateTime;
 
@@ -10,6 +10,9 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+
+import com.example.bookstoreProject.Book.Book;
+import com.example.bookstoreProject.User.User;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -43,7 +46,4 @@ public class Comment {
     private LocalDateTime date_created;
     @UpdateTimestamp
     private LocalDateTime date_updated;
-    public Object searchComments(String query) {
-        return null;
-    }
 }

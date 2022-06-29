@@ -1,12 +1,9 @@
-package com.example.bookstoreProject.service.impl;
+package com.example.bookstoreProject.Book;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.bookstoreProject.entity.Author;
-import com.example.bookstoreProject.entity.Book;
-import com.example.bookstoreProject.repository.BookRepository;
-import com.example.bookstoreProject.service.BookService;
+import com.example.bookstoreProject.Author.Author;
 
 @Service
 public class BookServiceImpl implements BookService {

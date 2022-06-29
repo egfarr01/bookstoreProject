@@ -1,7 +1,5 @@
-package com.example.bookstoreProject.service.impl;
+package com.example.bookstoreProject.Comment;
 
-import com.example.bookstoreProject.entity.Comment;
-import com.example.bookstoreProject.repository.CommentRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

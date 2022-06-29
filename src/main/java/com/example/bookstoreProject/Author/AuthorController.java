@@ -1,6 +1,4 @@
-package com.example.bookstoreProject.controller;
-import com.example.bookstoreProject.entity.Author;
-import com.example.bookstoreProject.service.AuthorService;
+package com.example.bookstoreProject.Author;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,6 +24,7 @@ public class AuthorController {
     // }
 
     @PostMapping
+    @RequestMapping("/createAuthor")
     public Author createAuthor(@RequestBody Author author) {
         return authorService.createAuthor(author);
     }

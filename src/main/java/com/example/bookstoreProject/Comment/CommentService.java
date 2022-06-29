@@ -1,8 +1,6 @@
-package com.example.bookstoreProject.service.impl;
+package com.example.bookstoreProject.Comment;
 
 import java.util.List;
-
-import com.example.bookstoreProject.entity.Comment;
 
 public interface CommentService {
     List<Comment> searchComments(String query);
