@@ -4,27 +4,20 @@ import java.time.LocalDateTime;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import java.util.Set;
 
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.NaturalId;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import com.example.bookstoreProject.Author.Author;
-import com.example.bookstoreProject.Author.AuthorRepository;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 
 @Getter
@@ -52,4 +45,8 @@ public class Book {
     private LocalDateTime date_created;
     @UpdateTimestamp
     private LocalDateTime date_updated;
+
+    public Book(String isbn) {
+        this.isbn = isbn;
+    }
 }

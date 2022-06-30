@@ -3,8 +3,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.bookstoreProject.Author.Author;
-
 @Service
 public class BookServiceImpl implements BookService {
     private BookRepository bookRepository;
@@ -25,8 +23,8 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public Book searchBooksByISBN(String ISBN) {
-        Book book = bookRepository.searchBooksByISBN(ISBN);
+    public Book searchBooksByISBN(String isbn) {
+        Book book = bookRepository.searchBooksByISBN(isbn);
         return book;
     }
 

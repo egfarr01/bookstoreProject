@@ -1,11 +1,15 @@
 package com.example.bookstoreProject.Comment;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.example.bookstoreProject.Book.Book;
+import com.example.bookstoreProject.User.User;
 
 import java.util.List;
 
@@ -18,14 +22,16 @@ public class CommentController {
         this.commentService = commentService;
     }
 
-    @GetMapping("/search")
-    public ResponseEntity<List<Comment>> searchComment(@RequestParam("query") String query){
-        return ResponseEntity.ok(commentService.searchComments(query));
+    @GetMapping("/searchByISBN")
+    public ResponseEntity<List<Comment>> searchCommentsByISBN(@RequestParam("query") String query){
+        return ResponseEntity.ok(commentService.searchCommentsByISBN(query));
     }
 
-    @PostMapping
-    public Comment createComments(@RequestBody Comment comment) {
-        return commentService.createComments(comment);
+    @PostMapping("/createComment/{userID}/{ISBN}")
+    public Comment createComments(@RequestBody Comment comment, @PathVariable Long userID, @PathVariable String ISBN) {
+        comment.setUser(new User(userID));
+        comment.setBook(new Book(ISBN));
+        return commentService.createComment(comment);
     }
 
 }

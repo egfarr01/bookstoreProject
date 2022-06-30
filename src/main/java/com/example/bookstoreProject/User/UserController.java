@@ -18,12 +18,12 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/search")
+    @GetMapping("/searchByUsername")
     public ResponseEntity<List<User>> searchUsers(@RequestParam("query") String query){
         return ResponseEntity.ok(userService.searchUsers(query));
     }
 
-    @PostMapping
+    @PostMapping("/createUser")
     public User createUser(@RequestBody User user) {
         return userService.createUser(user);
     }
