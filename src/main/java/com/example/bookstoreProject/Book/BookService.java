@@ -7,6 +7,6 @@ import org.springframework.stereotype.Service;
 @Service
 public interface BookService {
     List<Book> searchBooksByAuthor(Long authorId);
-    Book searchBooksByISBN(String ISBN);
+    Book searchBooksByISBN(String isbn);
     Book createBook(Book book);
 }

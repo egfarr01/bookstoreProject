@@ -14,6 +14,6 @@ public interface BookRepository extends JpaRepository<Book, Long>{
     List<Book> searchBooksByAuthor(Long authorid);
 
     @Query(value = "SELECT * from books p WHERE " +
-    "p.ISBN LIKE :ISBN", nativeQuery = true)
-    Book searchBooksByISBN(String ISBN);
+    "p.ISBN LIKE :isbn", nativeQuery = true)
+    Book searchBooksByISBN(String isbn);
 }
