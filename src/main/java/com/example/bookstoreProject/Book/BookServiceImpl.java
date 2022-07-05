@@ -33,4 +33,15 @@ public class BookServiceImpl implements BookService {
         return bookRepository.save(book);
     }
 
+    @Override
+    public List<Book> searchBooksByGenre(String genre) {
+        List<Book> books = bookRepository.searchBooksByGenre(genre);
+        return books;
+    }
+
+    @Override
+    public List<Book> searchByTopTen() {
+        List<Book> books = bookRepository.findTop10ByOrderByCopiesSoldDesc();
+        return books;
+    }
 }
