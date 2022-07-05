@@ -1,5 +1,4 @@
 package com.example.bookstoreProject;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,7 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BookstoreProjectApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BookstoreProjectApplication.class, args);
+		SpringApplication.run(BookstoreProjectApplication.class, args);	
 	}
-
+	
 }
+
+
