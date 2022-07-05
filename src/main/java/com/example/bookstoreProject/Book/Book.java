@@ -39,7 +39,7 @@ public class Book {
 
     private String genre;
     private int year_published;
-    private long copies_sold;
+    private long copiesSold;
 
     @CreationTimestamp
     private LocalDateTime date_created;

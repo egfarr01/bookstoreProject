@@ -21,6 +21,6 @@ public interface BookRepository extends JpaRepository<Book, Long>{
     "p.genre LIKE :genre", nativeQuery = true)
     List<Book> searchBooksByGenre(String genre);
 
-    //List<Book> findTop10ByOrderByCopiesSoldDesc();
+    List<Book> findTop10ByOrderByCopiesSoldDesc();
 
 }
