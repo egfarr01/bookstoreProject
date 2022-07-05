@@ -28,13 +28,8 @@ public class Author {
     private Long id;
     private String first_name;
     private String last_name;
-<<<<<<< HEAD:src/main/java/com/example/bookstoreProject/entity/User.java
     private String email;
 
-=======
-    private String bio;
-    private String publisher;
->>>>>>> main:src/main/java/com/example/bookstoreProject/Author/Author.java
     @CreationTimestamp
     private LocalDateTime date_created;
     @UpdateTimestamp

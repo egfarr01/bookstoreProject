@@ -16,4 +16,11 @@ public interface BookRepository extends JpaRepository<Book, Long>{
     @Query(value = "SELECT * from books p WHERE " +
     "p.ISBN LIKE :isbn", nativeQuery = true)
     Book searchBooksByISBN(String isbn);
+
+    @Query(value = "SELECT * from books p WHERE " +
+    "p.genre LIKE :genre", nativeQuery = true)
+    List<Book> searchBooksByGenre(String genre);
+
+    //List<Book> findTop10ByOrderByCopiesSoldDesc();
+
 }

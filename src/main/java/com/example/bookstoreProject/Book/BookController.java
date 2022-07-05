@@ -21,12 +21,12 @@ public class BookController {
     }
 
     @GetMapping("/searchByISBN/{ISBN}")
-    public ResponseEntity<Book> searchBooks(@PathVariable String ISBN){
+    public ResponseEntity<Book> searchBooksbyISBN(@PathVariable String ISBN){
         return ResponseEntity.ok(bookService.searchBooksByISBN(ISBN));
     }
 
     @GetMapping("/searchByAuthor/{authorId}")
-    public ResponseEntity<List<Book>> searchBooks(@PathVariable Long authorId){
+    public ResponseEntity<List<Book>> searchBooksbyAuthor(@PathVariable Long authorId){
         return ResponseEntity.ok(bookService.searchBooksByAuthor(authorId));
     }
     
@@ -34,6 +34,16 @@ public class BookController {
     public Book createBook(@RequestBody Book book, @PathVariable Long authorId) {
         book.setAuthor(new Author(authorId));
         return bookService.createBook(book);
+    }
+
+    @GetMapping("/searchByGenre/{genre}")
+    public ResponseEntity<List<Book>> searchBooksbyGenre(@PathVariable String genre){
+        return ResponseEntity.ok(bookService.searchBooksByGenre(genre));
+    }
+
+    @GetMapping("/getTopTen")
+    public ResponseEntity<List<Book>> findTop10ByOrderByCopiesSoldDesc(){
+        return ResponseEntity.ok(bookService.searchByTopTen());
     }
 
 }
