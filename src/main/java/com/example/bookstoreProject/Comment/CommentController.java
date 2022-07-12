@@ -34,4 +34,8 @@ public class CommentController {
         return commentService.createComment(comment);
     }
 
+    @GetMapping("/RatingDescending")
+    public ResponseEntity<List<Comment>> sortCommentsByRating() {
+        return ResponseEntity.ok(commentService.sortCommentsByRating());
+    }
 }
