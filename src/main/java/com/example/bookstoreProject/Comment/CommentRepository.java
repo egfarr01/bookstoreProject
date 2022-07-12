@@ -11,7 +11,7 @@ public interface CommentRepository extends JpaRepository<Comment, Long> {
     "p.book.isbn LIKE :isbn", nativeQuery = true)
     List<Comment> searchCommentsByISBN(String isbn);
    //search comments by rating
-   List<Comment> findByOrderByRatingAsc();
+   List<Comment> findByOrderByRatingDesc();
    //search comments by user
    @Query(value = "SELECT * from comments p WHERE " +
    "p.user.id LIKE :userID", nativeQuery = true)

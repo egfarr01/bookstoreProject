@@ -20,7 +20,7 @@ public class CommentServiceImpl implements CommentService{
 
     @Override
     public List<Comment> sortCommentsByRating() {
-        List<Comment> comments = commentRepository.findByOrderByRatingAsc();
+        List<Comment> comments = commentRepository.findByOrderByRatingDesc();
         return comments;
     }
 
