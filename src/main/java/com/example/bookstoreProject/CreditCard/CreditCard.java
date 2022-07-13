@@ -12,7 +12,6 @@ import javax.persistence.Table;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.validator.constraints.Length;
-
 import com.example.bookstoreProject.User.User;
 
 import lombok.AllArgsConstructor;
