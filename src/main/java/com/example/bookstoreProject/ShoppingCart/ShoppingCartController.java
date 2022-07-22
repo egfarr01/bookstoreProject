@@ -1,4 +1,3 @@
-diamond-cart
 package com.example.bookstoreProject.ShoppingCart;
 import java.util.List;
 
@@ -44,4 +43,3 @@ public class ShoppingCartController {
         return shoppingCartService.createShoppingCart(shoppingCart);
     }
 }
-main

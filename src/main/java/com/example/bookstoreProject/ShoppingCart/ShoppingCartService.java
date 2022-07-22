@@ -10,5 +10,4 @@ public interface ShoppingCartService {
     List<ShoppingCart> searchCartsByUser(Long userId);
     ShoppingCart createShoppingCart(ShoppingCart shoppingCart);
     // Long deleteById(Long id);
- 
 }
