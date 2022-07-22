@@ -1,81 +1,47 @@
-public class ShoppingCartController
-{
-    private String name = null;
-    private double price;
-    private boolean taxable;
+diamond-cart
+package com.example.bookstoreProject.ShoppingCart;
+import java.util.List;
 
-    ShoppingCartController(String name, double price, boolean taxable) {
-        this.name = name;
-        this.price = price;
-        this.taxable = taxable;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.bookstoreProject.Author.Author;
+import com.example.bookstoreProject.Book.Book;
+import com.example.bookstoreProject.User.User;
+
+@CrossOrigin(origins = "http://localhost:3000")
+@RestController
+@RequestMapping("/api/v1/shoppingCarts")
+public class ShoppingCartController {
+    private ShoppingCartService shoppingCartService;
+
+    public ShoppingCartController(ShoppingCartService shoppingCartService) {
+        this.shoppingCartService = shoppingCartService;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public boolean isTaxable() {
-        return taxable;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setTaxable(boolean taxable) {
-        this.taxable = taxable;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-}
-class ShoppingCart 
-{
-    ShoppingCart(items) 
-    {
-        this.items = items
-    }
-
-    getItems() 
-    {
-        return this.items
-    }
-
-}
-
-public double cashRegister(ArrayList<Item> shoppingCart) 
-{
-    let sum = 0
-    //shoppingCart.getItems().forEach(item) 
-    //shoppingCart.getItems();
-
-    //sum of entire cart:
-    for(int i = 0; i < shoppingCart.size(); i++)
-    {
-         
-        sum = sum + (item.getPrice() * 1.10)
-        //sum = sum + item.getPrice()
-        
-    
-    }
-
-    //print shoping cart: 
-    for(int i = 0; i < shoppingCart.size() i++)
-    {
-        System.out.println("printing item" + i);
-        System.out.println(shoppingCart.get(i));    
+    @GetMapping("/searchByUser/{userId}")
+    public ResponseEntity<List<ShoppingCart>> searchShoppingCartsbyUser(@PathVariable Long userId){
+        return ResponseEntity.ok(shoppingCartService.searchCartsByUser(userId));
     }
     
-    return sum
+    @PostMapping("/createShoppingCart/{userId}/{bookId}")
+    public ShoppingCart createShoppingCart(@RequestBody ShoppingCart shoppingCart, @PathVariable Long userId, @PathVariable String bookId) {
+        shoppingCart.setUser(new User(userId));
+        shoppingCart.setBook(new Book(bookId));
+        return shoppingCartService.createShoppingCart(shoppingCart);
+    }
+
+    @PostMapping("/updateShoppingCart/{userId}/{bookId}")
+    public ShoppingCart updateShoppingCart(@RequestBody ShoppingCart shoppingCart, @PathVariable Long userId, @PathVariable String bookId) {
+        shoppingCart.setUser(new User(userId));
+        shoppingCart.setBook(new Book(bookId));
+        return shoppingCartService.createShoppingCart(shoppingCart);
+    }
 }
-item1 = new Item("item1",100,false)
-item2 = new Item("item2",90,true)
-item3 = new Item("item3",80,false)
-item4 = new Item("item4",70,false)
-console.log(cashRegister(new ShoppingCart([item1, item2, item3])));
-console.log(cashRegister(new ShoppingCart([item4,item2])));
+main

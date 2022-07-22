@@ -35,8 +35,8 @@ public class ShoppingCart {
     User user;
     @ManyToOne
     Book book;
-    
-    
+
+
     @CreationTimestamp
     private LocalDateTime date_created;
     @UpdateTimestamp
