@@ -28,8 +28,8 @@ public class Author {
     private Long id;
     private String first_name;
     private String last_name;
-    private String email;
-
+    private String bio;
+    private String publisher;
     @CreationTimestamp
     private LocalDateTime date_created;
     @UpdateTimestamp
