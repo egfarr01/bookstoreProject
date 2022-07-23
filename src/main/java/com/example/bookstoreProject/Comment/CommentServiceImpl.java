@@ -28,4 +28,9 @@ public class CommentServiceImpl implements CommentService{
     public Comment createComment(Comment comment) {
         return commentRepository.save(comment);
     }
+
+    @Override
+    public List<Comment> getCommentsAboveRating(int rating) {
+        return commentRepository.findByRatingGreaterThan(rating);
+    }
 }

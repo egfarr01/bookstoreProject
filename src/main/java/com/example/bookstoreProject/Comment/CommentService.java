@@ -9,5 +9,6 @@ public interface CommentService {
 
     Comment createComment(Comment comment);
 
+    List<Comment> getCommentsAboveRating(int target);
 
 }

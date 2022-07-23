@@ -16,4 +16,7 @@ public interface CommentRepository extends JpaRepository<Comment, Long> {
    @Query(value = "SELECT * from comments p WHERE " +
    "p.user.id LIKE :userID", nativeQuery = true)
    List<Comment> searchCommentsByUser(Long userID);
+
+   List<Comment> findByRatingGreaterThan(int target);
+
 }

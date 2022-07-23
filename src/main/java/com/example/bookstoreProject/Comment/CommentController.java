@@ -38,4 +38,9 @@ public class CommentController {
     public ResponseEntity<List<Comment>> sortCommentsByRating() {
         return ResponseEntity.ok(commentService.sortCommentsByRating());
     }
+
+    @GetMapping("/searchByRating/{target}")
+    public ResponseEntity<List<Comment>> searchbyRating(@PathVariable int target){
+        return ResponseEntity.ok(commentService.getCommentsAboveRating(target));
+    }
 }
