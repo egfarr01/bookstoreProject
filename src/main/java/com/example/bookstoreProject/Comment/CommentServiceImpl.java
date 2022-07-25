@@ -31,6 +31,6 @@ public class CommentServiceImpl implements CommentService{
 
     @Override
     public List<Comment> getCommentsAboveRating(int rating) {
-        return commentRepository.findByRatingGreaterThan(rating);
+        return commentRepository.findByRatingGreaterThanEqual(rating);
     }
 }
