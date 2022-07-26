@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 public interface ShoppingCartService {
     List<ShoppingCart> searchCartsByUser(Long userId);
     ShoppingCart createShoppingCart(ShoppingCart shoppingCart);
+    String deleteFromCart(Long id);
     // Long deleteById(Long id);
  
 }

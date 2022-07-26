@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 
 
 @Repository
-public interface BookRepository extends JpaRepository<Book, Long>{
+public interface BookRepository extends JpaRepository<Book, String>{
     @Query(value = "SELECT * from books p WHERE " +
     "p.author_id LIKE :authorid", nativeQuery = true)
     List<Book> searchBooksByAuthor(Long authorid);
