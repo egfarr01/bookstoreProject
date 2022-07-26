@@ -11,4 +11,6 @@ public interface CommentService {
 
     List<Comment> getCommentsAboveRating(int target);
 
+    Double getAvgRatingDouble(String ISBN);
+
 }

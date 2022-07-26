@@ -33,4 +33,9 @@ public class CommentServiceImpl implements CommentService{
     public List<Comment> getCommentsAboveRating(int rating) {
         return commentRepository.findByRatingGreaterThanEqual(rating);
     }
+
+    @Override
+    public Double getAvgRatingDouble(String ISBN) {
+        return commentRepository.getAvgRatingDouble(ISBN);
+    }
 }

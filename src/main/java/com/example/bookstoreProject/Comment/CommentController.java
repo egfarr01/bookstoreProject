@@ -43,4 +43,10 @@ public class CommentController {
     public ResponseEntity<List<Comment>> searchbyRating(@PathVariable int target){
         return ResponseEntity.ok(commentService.getCommentsAboveRating(target));
     }
+
+    @GetMapping("/getAvgRating/{ISBN}")
+    public ResponseEntity<Double> getAvgRating(@PathVariable String ISBN) {
+        return ResponseEntity.ok(commentService.getAvgRatingDouble(ISBN));
+    }
+
 }

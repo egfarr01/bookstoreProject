@@ -33,8 +33,8 @@ public class BookController {
     }
     
     @PostMapping("/createBook/{authorId}")
-    public Book createBook(@RequestBody Book book, @PathVariable Long authorId) {
-        book.setAuthor(new Author(authorId));
+    public Book createBook(@RequestBody Book book, @PathVariable Author authorId) {
+        book.setAuthor(authorId);
         return bookService.createBook(book);
     }
 

@@ -19,4 +19,8 @@ public interface CommentRepository extends JpaRepository<Comment, Long> {
 
    List<Comment> findByRatingGreaterThanEqual(int target);
 
+   @Query(value = "SELECT AVG(rating) from comments p WHERE " +
+   "p.book_isbn LIKE :ISBN", nativeQuery = true)
+   Double getAvgRatingDouble(String ISBN);
+
 }
