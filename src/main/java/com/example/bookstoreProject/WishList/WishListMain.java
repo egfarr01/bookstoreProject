@@ -31,13 +31,13 @@
 //     private String remove;
     
 //     @ManyToOne
-//     Book book;
+//     User user;
 //     @ManyToOne
-//     ShoppingCart cart;
+//     Book book;
 
 //     @CreationTimestamp
 //     private LocalDateTime date_created;
 //     @UpdateTimestamp
-//     private LocalDateTime date_updated;
+//    private LocalDateTime date_updated;
 
 // }
