@@ -26,8 +26,8 @@ public class CreditCardController {
     }
 
     @PostMapping("/createCreditCard/{userID}")
-    public CreditCard createCreditCard(@RequestBody CreditCard creditCard, @PathVariable Long userID) {
-        creditCard.setUser(new User(userID));
+    public CreditCard createCreditCard(@RequestBody CreditCard creditCard, @PathVariable User userID) {
+        creditCard.setUser(userID);
         return creditCardService.createCreditCard(creditCard);
     }
 

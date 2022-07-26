@@ -28,9 +28,9 @@ public class CommentController {
     }
 
     @PostMapping("/createComment/{userID}/{ISBN}")
-    public Comment createComments(@RequestBody Comment comment, @PathVariable Long userID, @PathVariable String ISBN) {
-        comment.setUser(new User(userID));
-        comment.setBook(new Book(ISBN));
+    public Comment createComments(@RequestBody Comment comment, @PathVariable User userID, @PathVariable Book ISBN) {
+        comment.setUser(userID);
+        comment.setBook(ISBN);
         return commentService.createComment(comment);
     }
 

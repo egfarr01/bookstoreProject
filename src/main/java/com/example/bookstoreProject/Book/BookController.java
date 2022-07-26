@@ -1,6 +1,7 @@
 package com.example.bookstoreProject.Book;
 import java.util.List;
 
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -46,6 +47,11 @@ public class BookController {
     @GetMapping("/getTopTen")
     public ResponseEntity<List<Book>> findTop10ByOrderByCopiesSoldDesc(){
         return ResponseEntity.ok(bookService.searchByTopTen());
+    }
+
+    @GetMapping("/browseBooks/{pageNumber}/{pageSize}")
+    public ResponseEntity<Page<Book>> getBooksAtPageOfSize(@PathVariable int pageNumber, @PathVariable int pageSize) {
+        return ResponseEntity.ok(bookService.getBooksAtPageOfSize(pageNumber, pageSize));
     }
 
   

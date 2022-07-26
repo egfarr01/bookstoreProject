@@ -30,16 +30,16 @@ public class ShoppingCartController {
     }
     
     @PostMapping("/createShoppingCart/{userId}/{bookId}")
-    public ShoppingCart createShoppingCart(@RequestBody ShoppingCart shoppingCart, @PathVariable Long userId, @PathVariable String bookId) {
-        shoppingCart.setUser(new User(userId));
-        shoppingCart.setBook(new Book(bookId));
+    public ShoppingCart createShoppingCart(@RequestBody ShoppingCart shoppingCart, @PathVariable User userId, @PathVariable Book bookId) {
+        shoppingCart.setUser(userId);
+        shoppingCart.setBook(bookId);
         return shoppingCartService.createShoppingCart(shoppingCart);
     }
 
     @PostMapping("/updateShoppingCart/{userId}/{bookId}")
-    public ShoppingCart updateShoppingCart(@RequestBody ShoppingCart shoppingCart, @PathVariable Long userId, @PathVariable String bookId) {
-        shoppingCart.setUser(new User(userId));
-        shoppingCart.setBook(new Book(bookId));
+    public ShoppingCart updateShoppingCart(@RequestBody ShoppingCart shoppingCart, @PathVariable User userId, @PathVariable Book bookId) {
+        shoppingCart.setUser(userId);
+        shoppingCart.setBook(bookId);
         return shoppingCartService.createShoppingCart(shoppingCart);
     }
 }
