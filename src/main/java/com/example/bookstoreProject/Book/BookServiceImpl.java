@@ -1,6 +1,10 @@
 package com.example.bookstoreProject.Book;
 import java.util.List;
 
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -43,6 +47,12 @@ public class BookServiceImpl implements BookService {
     public List<Book> searchByTopTen() {
         List<Book> books = bookRepository.findTop10ByOrderByCopiesSoldDesc();
         return books;
+    }
+
+    @Override
+    public Page<Book> getBooksAtPageOfSize(int pageNumber, int pageSize) {
+        Pageable customPage = PageRequest.of(pageNumber, pageSize, Sort.by("title"));
+        return bookRepository.findAll(customPage);
     }
 
     
