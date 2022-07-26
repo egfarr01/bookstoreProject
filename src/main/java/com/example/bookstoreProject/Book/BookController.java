@@ -48,6 +48,10 @@ public class BookController {
         return ResponseEntity.ok(bookService.searchByTopTen());
     }
 
+    @GetMapping("/getVariableAmmount/{variable}")
+    public ResponseEntity<List<Book>> findVariableAmmount(@PathVariable int variable){
+        return ResponseEntity.ok(bookService.findVariableAmmount(variable));
+    }
   
 
 }

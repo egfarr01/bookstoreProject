@@ -45,5 +45,12 @@ public class BookServiceImpl implements BookService {
         return books;
     }
 
-    
+    @Override
+    public List<Book> findVariableAmmount(int variable) {
+        List<Book> books;
+        for (int i = 0; i < variable; i++) {
+            books.add(bookRepository[i]);
+            return books;
+          }
+    }
 }
