@@ -22,9 +22,14 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     @Override
     public ShoppingCart createShoppingCart(ShoppingCart shoppingCart) {
         return shoppingCartRepository.save(shoppingCart);
-    
-     }
-    // @Override
-    // public Long deleteFromCart()
+    }
+
+    @Override
+    public String deleteFromCart(Long id) {
+        shoppingCartRepository.deleteById(id);
+        return("Item id: " + id + " was removed from the cart.");
+    }
+
+
 }
 

@@ -1,9 +1,11 @@
 package com.example.bookstoreProject.ShoppingCart;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -31,10 +33,12 @@ public class ShoppingCart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ManyToOne
-    User user;
-    @ManyToOne
-    Book book;
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name="user_id")
+    private User user;
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name="isbn")
+    public Book book;
 
 
     @CreationTimestamp
